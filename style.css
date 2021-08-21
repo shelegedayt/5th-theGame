@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+@keyframes d_fly {
+    0% {
+        top: 0%;
+        left: -80px;
+    }
+
+    10%{
+        top: 10%;
+        left: -50px;
+    }
+
+    20%{
+        top: 88%;
+        left: 0;
+    }
+
+    30%{
+        top: 30%;
+        left: 25%;
+    }
+
+    40%{
+        top: 5%;
+        left: 70%;
+    }
+
+    50%{
+        top: 50%;
+        left: 10%;
+    }
+
+    60%{
+        top: 20%;
+        left: 30%;
+    }
+
+    70%{
+        top: 70%;
+        left: 5%;
+    }
+
+    80%{
+        top: 15%;
+        left: 80%;
+    }
+
+    90%{
+        top: 90%;
+        left: 80%;
+    }
+
+    100%{
+        top: 100%;
+        left: 110%;
+    }
+}
+
+@keyframes d_fly2{
+    from {left:-100px; top: 0px;}
+	to {left:100%; top: 400px}
+}
+
+@keyframes d_fly3{
+    0% {left:-100px; top: 300px;}
+	50% { left: 200px; top: 0px; }
+	100% {left:100%; top: 100px;}
+}
+
+@keyframes d_fly4{
+    from {left:0px; bottom: -100px;}
+	to {left:100%; bottom: 1000px}
+}
+
+@keyframes d_fly5{
+    0% {left:-100px; top: 0px;}
+	30% { left: 800px; top: 150px;}
+	60% { left: 200px; top: 0px;}	
+	100% {left:100%; top: 600px;}
+}
+
+@keyframes d_fly6{
+    0% {left:-100px; top: 300px;}
+	10% { left: 300px; top: 300px; }
+	20% { left: 900px; top: 600px; }
+	30% { left: 0px; top: 200px; }
+	40% { left: 1100px; top: 500px; }	
+	50% { left: 600px; top: 10px; }
+	60% { left: 400px; top: 600px; }
+	70% { left: 900px; top: 200px; }
+	80% { left: 400px; top: 500px; }
+	90% { left: 1100px; top: 200px; }
+	100% {left:100%; top: 8px;}
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+    counter-reset: shot;
+    position: relative;
+    background-image: url("Games_Duck_Hunt_Nintendo_Dendy_Nes_025749_9.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 bottom;
+    cursor: crosshair;
+    overflow: hidden;
+    
+}
+
+.listShot{
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 50px;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+input[type="checkbox"]:checked{
+    counter-increment: shot;
+}
+
+input[type="checkbox"]{
+    visibility: hidden;
+}
+
+input[type="checkbox"]:checked + .duck{
+    display: none;
+}
+
+.listShot::after{
+    content: counter(shot);
+}
+
+.duck{
+    display: block;
+    width: 62px;
+    height: 56px;
+    /* outline: 1px solid red; */
+    cursor: crosshair;
+    position: absolute;
+    top: 50%;
+    left: -80px;
+}
+
+.duck1{
+    animation: d_fly 5s 1s;
+}
+
+.duck2{
+    animation: d_fly2 3s 1s;
+}
+
+.duck3{
+    animation: d_fly3 5s 1s;
+}
+
+.duck4{
+    animation: d_fly4 2s 7s;
+}
+
+.duck5{
+    animation: d_fly5 3s 10s;
+}
+
+.duck6{
+    animation: d_fly6 5s 7s;
+}
